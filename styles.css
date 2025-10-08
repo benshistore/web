@@ -1,0 +1,68 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f4f8;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.tree ul {
+  padding-top: 20px;
+  position: relative;
+  transition: all 0.5s;
+}
+
+.tree li {
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 20px 5px 0 5px;
+  position: relative;
+  text-align: center;
+}
+
+/* Conectores */
+.tree li::before, .tree li::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 50%;
+  border-top: 2px solid #ccc;
+  width: 50%;
+  height: 20px;
+}
+.tree li::after {
+  right: auto;
+  left: 50%;
+  border-left: 2px solid #ccc;
+}
+
+/* Quitar conectores en nodos únicos */
+.tree li:only-child::before, 
+.tree li:only-child::after {
+  content: none;
+}
+.tree li:only-child { padding-top: 0; }
+
+/* Quitar líneas sobrantes en los extremos */
+.tree li:first-child::before { border: 0 none; }
+.tree li:last-child::after { border: 0 none; }
+
+/* Nodos */
+.tree span {
+  display: inline-block;
+  border: 2px solid #60a5fa;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: white;
+  font-weight: bold;
+  color: #333;
+  transition: all 0.3s;
+}
+
+/* Hover */
+.tree span:hover {
+  background: #60a5fa;
+  color: white;
+  border-color: #2563eb;
+  cursor: pointer;
+}
