@@ -1,68 +1,125 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #f0f4f8;
-  display: flex;
-  justify-content: center;
-  padding: 40px;
+:root{
+  --bg:#0f1724; /* dark navy */
+  --card:#0b1220;
+  --accent:#60a5fa; /* blue */
+  --accent-2:#34d399; /* green */
+  --glass: rgba(255,255,255,0.04);
+  --muted: #9aa4b2;
 }
 
-.tree ul {
-  padding-top: 20px;
-  position: relative;
-  transition: all 0.5s;
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  min-height:100vh;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: url("https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1920&q=80") no-repeat center center fixed;
+  background-size: cover; /* ajusta la imagen a toda la pantalla */
+  color: #e6eef7;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px;
 }
 
-.tree li {
-  list-style-type: none;
-  margin: 0 auto;
-  padding: 20px 5px 0 5px;
-  position: relative;
-  text-align: center;
+.wrap{
+  width:100%;
+  max-width:920px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:20px;
+  padding:28px;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+  display:grid;
+  grid-template-columns: 1fr 360px;
+  gap:24px;
+  align-items:center;
 }
 
-/* Conectores */
-.tree li::before, .tree li::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 50%;
-  border-top: 2px solid #ccc;
-  width: 50%;
-  height: 20px;
-}
-.tree li::after {
-  right: auto;
-  left: 50%;
-  border-left: 2px solid #ccc;
+@media (max-width:880px){
+  .wrap{grid-template-columns:1fr; padding:20px}
 }
 
-/* Quitar conectores en nodos únicos */
-.tree li:only-child::before, 
-.tree li:only-child::after {
-  content: none;
-}
-.tree li:only-child { padding-top: 0; }
-
-/* Quitar líneas sobrantes en los extremos */
-.tree li:first-child::before { border: 0 none; }
-.tree li:last-child::after { border: 0 none; }
-
-/* Nodos */
-.tree span {
-  display: inline-block;
-  border: 2px solid #60a5fa;
-  padding: 8px 14px;
-  border-radius: 8px;
-  background: white;
-  font-weight: bold;
-  color: #333;
-  transition: all 0.3s;
+.left{
+  padding:18px 8px;
 }
 
-/* Hover */
-.tree span:hover {
-  background: #60a5fa;
-  color: white;
-  border-color: #2563eb;
-  cursor: pointer;
+h1{
+  margin:0 0 10px 0;
+  font-size:44px;
+  line-height:1.02;
+  font-weight:800;
+  letter-spacing:-0.02em;
+  color: var(--accent);
 }
+
+.subtitle{
+  color:var(--muted);
+  margin-bottom:18px;
+  font-weight:400;
+}
+
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.006));
+  border-radius:14px;
+  padding:18px;
+  margin-top:12px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.45);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+.buttons{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:12px;
+}
+
+.btn{
+  -webkit-appearance:none;
+  appearance:none;
+  border:0;
+  padding:12px 18px;
+  border-radius:12px;
+  font-weight:600;
+  cursor:default; /* not interactive for demo */
+  box-shadow: 0 6px 14px rgba(2,6,23,0.55);
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  color: #dbeafe;
+  border:1px solid rgba(255,255,255,0.03);
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+}
+
+.btn:hover{ 
+  transform: translateY(-6px); 
+  box-shadow: 0 18px 40px rgba(2,6,23,0.6); 
+}
+
+.btn .dot{
+  width:10px;height:10px;border-radius:50%;background:var(--accent-2);box-shadow:0 4px 12px rgba(52,211,153,0.12);
+}
+
+.right{
+  display:flex;flex-direction:column;gap:12px;
+  align-items:center;justify-content:center;
+  padding:8px;
+}
+
+.preview-circle{
+  width:160px;height:160px;border-radius:50%;
+  background: conic-gradient(from 180deg, rgba(96,165,250,0.18), rgba(52,211,153,0.12));
+  display:flex;align-items:center;justify-content:center;
+  border:1px solid rgba(255,255,255,0.04);
+  box-shadow: inset 0 6px 20px rgba(255,255,255,0.02), 0 8px 30px rgba(2,6,23,0.6);
+}
+
+.logo-letters{font-weight:800;font-size:40px;color:#e6f6ff}
+
+.meta{color:var(--muted);font-size:13px;text-align:center}
+
+footer{margin-top:16px;text-align:center;color:var(--muted);font-size:13px}
+
+.row{display:flex;gap:10px;align-items:center}
+.muted{color:var(--muted)}
