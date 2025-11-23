@@ -12,7 +12,7 @@ body {
 
 .barra-anuncio {
     /* Estilos base: color, tamaño y alineación */
-    background-color: ff0000; /* Fondo negro */
+    background-color: ff0000; /* Fondo rojo */
     color: #ffffff;            /* Texto blanco */
     width: 100%;
     padding: 10px 0; 
@@ -32,7 +32,7 @@ body {
     display: inline-block; 
     
     /* Animación: Nombre | Duración | Tipo de aceleración | Repetición */
-    animation: desplazamiento 30s linear infinite; 
+    animation: desplazamiento 45s linear infinite; 
     /* Ajusta '30s' para cambiar la velocidad. Mayor número = más lento. */
 }
 
