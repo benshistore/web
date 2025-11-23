@@ -12,7 +12,7 @@ body {
 
 .barra-anuncio {
     /* Estilos base: color, tamaño y alineación */
-    background-color: #000000; /* Fondo negro */
+    background-color: ff0000; /* Fondo negro */
     color: #ffffff;            /* Texto blanco */
     width: 100%;
     padding: 10px 0; 
