@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #201f1f;
+    height: 100vh;
+}
+
+
+/* CONTENEDOR DE BARRA */
+.barra-anuncio {
+    width: 100%;
+    overflow: hidden;
+    background: #e70101;
+    padding: 8px 0;
+    position: relative;
+    white-space: nowrap;
+}
+
+/* TEXTO — DOS COPIAS PARA EFECTO INFINITO */
+.marquee {
+    display: inline-block;
+    white-space: nowrap;
+    animation: mover 35s linear infinite;
+}
+
+.marquee span {
+    margin-right: 60px; /* espacio entre mensajes */
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* ANIMACIÓN SUAVE SIN HUECOS */
+@keyframes mover {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.header-logo {
+   display: flex;
+    justify-content: center;
+}
+
+.header-logo img {
+    width: 100px;   /* Ajusta el tamaño del logo */
+    height: auto;
+    display: inline-block;
+}
+
+/* ESTILOS PARA EL CATÁLOGO */
+
+
+.catalogos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.catalog-card {
+    width: 180px;
+    height: 180px;
+    background: #f7f7f7;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.catalog-card img {
+    width: 70%;
+    height: auto;
+    object-fit: contain;
+}
+
+.catalog-card h3 {
+    font-size: 16px;
+    margin: 0;
+    text-align: center;
+}
+
+.catalog-card:hover {
+    transform: scale(1.05);
+    background: #eaeaea;
+}
